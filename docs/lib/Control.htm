@@ -38,51 +38,51 @@
 <h2 id="SubCommands">Sub-commands</h2>
 <p>For <em>SubCommand</em>, specify one of the following:</p>
 <ul>
-  <li><a href="#Check">Check</a>: Turns on (checks) a radio button or checkbox.</li>
-  <li><a href="#Uncheck">Uncheck</a>: Turns off a radio button or checkbox.</li>
+  <li><a href="#Check">Check</a>: Checks a check box or radio button.</li>
+  <li><a href="#Uncheck">Uncheck</a>: Unchecks a check box or radio button.</li>
+  <li><a href="#Disable">Disable</a>: Disables (grays out) a control.</li>
   <li><a href="#Enable">Enable</a>: Enables a control if it was previously disabled.</li>
-  <li><a href="#Disable">Disable</a>: Disables or "grays out" a control.</li>
-  <li><a href="#Show">Show</a>: Shows a control if it was previously hidden.</li>
   <li><a href="#Hide">Hide</a>: Hides a control.</li>
+  <li><a href="#Show">Show</a>: Shows a control if it was previously hidden.</li>
   <li><a href="#Style">Style</a>: Changes the style of a control.</li>
   <li><a href="#ExStyle">ExStyle</a>: Changes the extended style of a control.</li>
-  <li><a href="#ShowDropDown">ShowDropDown</a>: Shows the drop-down list of a ComboBox control.</li>
-  <li><a href="#HideDropDown">HideDropDown</a>: Hides the drop-down list of a ComboBox control.</li>
-  <li><a href="#TabLeft">TabLeft</a>: Moves left by one or more tabs in a SysTabControl32.</li>
-  <li><a href="#TabRight">TabRight</a>: Moves right by one or more tabs in a SysTabControl32.</li>
-  <li><a href="#Add">Add</a>: Adds the specified string as a new entry at the bottom of a ListBox, ComboBox (and possibly other types).</li>
-  <li><a href="#Delete">Delete</a>: Deletes the specified entry number from a ListBox or ComboBox.</li>
-  <li><a href="#Choose">Choose</a>: Sets the selection in a ListBox or ComboBox to be the specified entry number.</li>
-  <li><a href="#ChooseString">ChooseString</a>: Sets the selection in a ListBox or ComboBox to be the first entry whose leading part matches the specified string.</li>
-  <li><a href="#EditPaste">EditPaste</a>: Pastes the specified string at the caret in an Edit control.</li>
+  <li><a href="#ShowDropDown">ShowDropDown</a>: Shows the list of a combo box or drop-down list.</li>
+  <li><a href="#HideDropDown">HideDropDown</a>: Hides the list of a combo box or drop-down list.</li>
+  <li><a href="#TabLeft">TabLeft</a>: Moves left by one or more pages in a tab control.</li>
+  <li><a href="#TabRight">TabRight</a>: Moves right by one or more pages in a tab control.</li>
+  <li><a href="#Add">Add</a>: Adds a new entry at the bottom of a list box, combo box, or drop-down list.</li>
+  <li><a href="#Delete">Delete</a>: Deletes an entry from a list box, combo box, or drop-down list by index.</li>
+  <li><a href="#Choose">Choose</a>: Selects an entry in a list box, combo box, or drop-down list by index.</li>
+  <li><a href="#ChooseString">ChooseString</a>: Selects an entry in a list box, combo box, or drop-down list by string.</li>
+  <li><a href="#EditPaste">EditPaste</a>: Pastes a string at the caret in an edit control.</li>
 </ul>
 
 <h3 id="Check">Check</h3>
-<p>Turns on (checks) a radio button or checkbox.</p>
+<p>Checks a check box or radio button.</p>
 <pre class="Syntax"><span class="func">Control</span>, Check <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
-<p>To ensure correct functionality, this sub-command also sets the input focus to the control.</p>
+<p>To ensure correct functionality, this sub-command also sets the keyboard focus to the control.</p>
 
 <h3 id="Uncheck">Uncheck</h3>
-<p>Turns off a radio button or checkbox.</p>
+<p>Unchecks a check box or radio button.</p>
 <pre class="Syntax"><span class="func">Control</span>, Uncheck <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
-<p>To ensure correct functionality, this sub-command also sets the input focus to the control.</p>
+<p>To ensure correct functionality, this sub-command also sets the keyboard focus to the control.</p>
+
+<h3 id="Disable">Disable</h3>
+<p>Disables (grays out) a control.</p>
+<pre class="Syntax"><span class="func">Control</span>, Disable <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 
 <h3 id="Enable">Enable</h3>
 <p>Enables a control if it was previously disabled.</p>
 <pre class="Syntax"><span class="func">Control</span>, Enable <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 
-<h3 id="Disable">Disable</h3>
-<p>Disables or "grays out" a control.</p>
-<pre class="Syntax"><span class="func">Control</span>, Disable <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
-
-<h3 id="Show">Show</h3>
-<p>Shows a control if it was previously hidden.</p>
-<pre class="Syntax"><span class="func">Control</span>, Show <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
-
 <h3 id="Hide">Hide</h3>
 <p>Hides a control.</p>
 <pre class="Syntax"><span class="func">Control</span>, Hide <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 <p>If you additionally want to prevent a control's shortcut key (underlined letter) from working, disable the control via the <a href="#Disable">Disable</a> sub-command.</p>
+
+<h3 id="Show">Show</h3>
+<p>Shows a control if it was previously hidden.</p>
+<pre class="Syntax"><span class="func">Control</span>, Show <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 
 <h3 id="Style">Style</h3>
 <p>Changes the style of a control.</p>
@@ -94,51 +94,52 @@
 <h3 id="ExStyle">ExStyle</h3>
 <p>Changes the extended style of a control.</p>
 <pre class="Syntax"><span class="func">Control</span>, ExStyle, N <span class="optional">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
-<p>See the <a href="#Style">Style</a> sub-command above for details.</p>
+<p>See the <a href="#Style">Style</a> sub-command for details.</p>
 
 <h3 id="ShowDropDown">ShowDropDown</h3>
-<p>Shows the drop-down list of a ComboBox control.</p>
+<p>Shows the list of a combo box or drop-down list.</p>
 <pre class="Syntax"><span class="func">Control</span>, ShowDropDown <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 
 <h3 id="HideDropDown">HideDropDown</h3>
-<p>Hides the drop-down list of a ComboBox control.</p>
+<p>Hides the list of a combo box or drop-down list.</p>
 <pre class="Syntax"><span class="func">Control</span>, HideDropDown <span class="optional">,, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 
 <h3 id="TabLeft">TabLeft</h3>
-<p>Moves left by one or more tabs in a SysTabControl32.</p>
+<p>Moves left by one or more pages in a tab control.</p>
 <pre class="Syntax"><span class="func">Control</span>, TabLeft <span class="optional">, Count, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
-<p>If <em>Count</em> is blank or omitted, it defaults to 1. To instead select a tab directly by number, replace the number 5 below with one less than the tab number you wish to select. In other words, 0 selects the first tab, 1 selects the second, and so on:</p>
+<p>If <em>Count</em> is blank or omitted, it defaults to 1. To instead select a page directly by index number, replace the number 5 below with one less than the page number you wish to select. In other words, 0 selects the first page, 1 selects the second, and so on:</p>
 <pre><a href="PostMessage.htm">SendMessage</a>, 0x1330, <span class="red">5</span>,, SysTabControl321, WinTitle  <em>; 0x1330 is TCM_SETCURFOCUS.</em>
 Sleep 0  <em>; This line and the next are necessary only for certain tab controls.</em>
 SendMessage, 0x130C, <span class="red">5</span>,, SysTabControl321, WinTitle  <em>; 0x130C is TCM_SETCURSEL.</em></pre>
 
 <h3 id="TabRight">TabRight</h3>
-<p>Moves right by one or more tabs in a SysTabControl32.</p>
+<p>Moves right by one or more pages in a tab control.</p>
 <pre class="Syntax"><span class="func">Control</span>, TabRight <span class="optional">, Count, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
-<p>See the <a href="#Style">TabLeft</a> sub-command above for details.</p>
+<p>See the <a href="#Style">TabLeft</a> sub-command for details.</p>
 
 <h3 id="Add">Add</h3>
-<p>Adds <em>String</em> as a new entry at the bottom of a ListBox, ComboBox (and possibly other types).</p>
+<p>Adds a new entry at the bottom of a list box, combo box, or drop-down list.</p>
 <pre class="Syntax"><span class="func">Control</span>, Add, String <span class="optional">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 
 <h3 id="Delete">Delete</h3>
-<p>Deletes the Nth entry from a ListBox or ComboBox.</p>
+<p>Deletes an entry from a list box, combo box, or drop-down list by index.</p>
 <pre class="Syntax"><span class="func">Control</span>, Delete, N <span class="optional">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 <p><em>N</em> should be 1 for the first entry, 2 for the second, etc.</p>
 
 <h3 id="Choose">Choose</h3>
-<p>Sets the selection in a ListBox or ComboBox to be the Nth entry.</p>
+<p>Selects an entry in a list box, combo box, or drop-down list by index.</p>
 <pre class="Syntax"><span class="func">Control</span>, Choose, N <span class="optional">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
-<p><em>N</em> should be 1 for the first entry, 2 for the second, etc. To select or deselect all items in a <em>multi-select</em> listbox, follow this example:</p>
-<pre><a href="PostMessage.htm">PostMessage</a>, 0x0185, 1, -1, ListBox1, WinTitle  <em>; Select all listbox items. 0x0185 is LB_SETSEL.</em></pre>
+<p><em>N</em> should be 1 for the first entry, 2 for the second, etc. To select or deselect all entries in a <em>multi-select</em> list box, follow this example:</p>
+<pre><a href="PostMessage.htm">PostMessage</a>, 0x0185, 1, -1, ListBox1, WinTitle  <em>; Select all list box entries. 0x0185 is LB_SETSEL.</em></pre>
 
 <h3 id="ChooseString">ChooseString</h3>
-<p>Sets the selection (choice) in a ListBox or ComboBox to be the first entry whose leading part matches <em>String</em>.</p>
+<p>Selects an entry in a list box, combo box, or drop-down list by string.</p>
 <pre class="Syntax"><span class="func">Control</span>, ChooseString, String <span class="optional">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
-<p>The search is not case-sensitive. For example, if a ListBox/ComboBox contains the item "UNIX Text", specifying the word unix (lowercase) would be enough to select it.</p>
+<p>The search stops at the first entry whose text begins with the specified string. In other words, if <em>String</em> matches multiple entries, the first one is selected.</p>
+<p>The search is not case-sensitive. For example, if a list box contains the entry "UNIX Text", specifying the word unix (lowercase) would be enough to select it.</p>
 
 <h3 id="EditPaste">EditPaste</h3>
-<p>Pastes <em>String</em> at the caret/insert position in an Edit control.</p>
+<p>Pastes a string at the caret in an edit control.</p>
 <pre class="Syntax"><span class="func">Control</span>, EditPaste, String <span class="optional">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 <p>This does not affect the contents of the <a href="../misc/Clipboard.htm">clipboard</a>.</p>
 
@@ -147,6 +148,7 @@ SendMessage, 0x130C, <span class="red">5</span>,, SysTabControl321, WinTitle  <e
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 1 if there was a problem or 0 otherwise.</p>
 
 <h2 id="Remarks">Remarks</h2>
+<p>This command is intended for use with controls in a non-GUI window, i.e. a window that is not created with the <a href="Gui.htm">Gui</a> command. It works best with common or predefined Microsoft controls; some applications use custom or modified controls, in which case the command might not work as expected. For <a href="GuiControls.htm">GUI controls</a>, it is usually more convenient to use <a href="GuiControl.htm">GuiControl</a>, assuming a suitable counterpart exists.</p>
 <p>To improve reliability, a delay is done automatically after every use of this command (except for the sub-commands <a href="#Style">Style</a> and <a href="#ExStyle">ExStyle</a>). That delay can be changed via <a href="SetControlDelay.htm">SetControlDelay</a>.</p>
 <p>To discover the ClassNN or HWND of the control that the mouse is currently hovering over, use <a href="MouseGetPos.htm">MouseGetPos</a>.</p>
 
@@ -156,7 +158,7 @@ SendMessage, 0x130C, <span class="red">5</span>,, SysTabControl321, WinTitle  <e
 <h2 id="Examples">Examples</h2>
 
 <div class="ex" id="ExBasic">
-<p><a class="ex_number" href="#ExBasic"></a> Hides the drop-down list of the first ComboBox.</p>
+<p><a class="ex_number" href="#ExBasic"></a> Hides the list of the first combo box in a GUI or non-GUI window.</p>
 <pre>Control, HideDropDown,, ComboBox1, Some Window Title</pre>
 </div>
 

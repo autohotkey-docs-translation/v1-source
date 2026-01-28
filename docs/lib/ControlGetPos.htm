@@ -39,12 +39,14 @@
 </dl>
 
 <h2 id="Remarks">Remarks</h2>
+<p>This command is intended for use with controls in a non-GUI window, i.e. a window that is not created with the <a href="Gui.htm">Gui</a> command. It works best with common or predefined Microsoft controls; some applications use custom or modified controls, in which case the command might not work as expected. For <a href="GuiControls.htm">GUI controls</a>, it is usually more convenient to use <a href="GuiControlGet.htm#Pos">GuiControlGet Pos</a>.</p>
 <p>If no matching window or control is found, the output variables will be made blank.</p>
 <p>Unlike commands that change a control, ControlGetPos does not have an automatic delay (<a href="SetControlDelay.htm">SetControlDelay</a> does not affect it).</p>
-<p>To discover the ClassNN or HWND of the control that the mouse is currently hovering over, use <a href="MouseGetPos.htm">MouseGetPos</a>. To retrieve a list of all controls in a window, use <a href="WinGet.htm#ControlList">WinGet ControlList</a>.</p>
+<p>To discover the ClassNN or HWND of the control that the mouse is currently hovering over, use <a href="MouseGetPos.htm">MouseGetPos</a>.</p>
+<p>To retrieve a list of all controls in a window, use <a href="WinGet.htm#ControlList">WinGet ControlList</a>.</p>
 
 <h2 id="Related">Related</h2>
-<p><a href="ControlMove.htm">ControlMove</a>, <a href="WinGetPos.htm">WinGetPos</a>, <a href="Control.htm">Control</a>, <a href="ControlGet.htm">ControlGet</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlSend.htm">ControlSend</a></p>
+<p><a href="ControlMove.htm">ControlMove</a>, <a href="WinGetPos.htm">WinGetPos</a>, <a href="GuiControlGet.htm#Pos">GuiControlGet Pos</a>, <a href="Control.htm">Control</a>, <a href="ControlGet.htm">ControlGet</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlSend.htm">ControlSend</a></p>
 <h2 id="Examples">Examples</h2>
 <div class="ex" id="ExBasic">
 <p><a class="ex_number" href="#ExBasic"></a> Continuously updates and displays the name and position of the control currently under the mouse cursor.</p>

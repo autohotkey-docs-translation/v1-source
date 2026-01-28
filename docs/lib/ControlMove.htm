@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title>ControlMove - Syntax &amp; Usage | AutoHotkey v1</title>
-<meta name="description" content="The ControlMove command moves or resizes a control." />
+<meta name="description" content="The ControlMove command moves and/or resizes a control." />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="../static/theme.css" rel="stylesheet" type="text/css" />
@@ -13,7 +13,7 @@
 
 <h1>ControlMove</h1>
 
-<p>Moves or resizes a control.</p>
+<p>Moves and/or resizes a control.</p>
 
 <pre class="Syntax"><span class="func">ControlMove</span> <span class="optional">, Control, X, Y, Width, Height, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 
@@ -45,10 +45,11 @@
 <p><a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 1 if there was a problem or 0 otherwise.</p>
 
 <h2 id="Remarks">Remarks</h2>
+<p>This command is intended for use with controls in a non-GUI window, i.e. a window that is not created with the <a href="Gui.htm">Gui</a> command. It works best with common or predefined Microsoft controls; some applications use custom or modified controls, in which case the command might not work as expected. For <a href="GuiControls.htm">GUI controls</a>, it is usually more convenient to use <a href="GuiControl.htm#Move">GuiControl Move</a>.</p>
 <p>To improve reliability, a delay is done automatically after every use of this command. That delay can be changed via <a href="SetControlDelay.htm">SetControlDelay</a>.</p>
 
 <h2 id="Related">Related</h2>
-<p><a href="ControlGetPos.htm">ControlGetPos</a>, <a href="WinMove.htm">WinMove</a>, <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="Control.htm">Control</a>, <a href="ControlGet.htm">ControlGet</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlSend.htm">ControlSend</a></p>
+<p><a href="ControlGetPos.htm">ControlGetPos</a>, <a href="WinMove.htm">WinMove</a>, <a href="SetControlDelay.htm">SetControlDelay</a>, <a href="GuiControl.htm#Move">GuiControl Move</a>, <a href="Control.htm">Control</a>, <a href="ControlGet.htm">ControlGet</a>, <a href="ControlGetText.htm">ControlGetText</a>, <a href="ControlSetText.htm">ControlSetText</a>, <a href="ControlClick.htm">ControlClick</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlSend.htm">ControlSend</a></p>
 
 <h2 id="Examples">Examples</h2>
 <div class="ex" id="ExControlMoveTimer">
