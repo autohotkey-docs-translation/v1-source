@@ -34,11 +34,11 @@
   </li>
   <li><a href="#Properties">Properties</a>:
     <ul>
-      <li><a href="#Pos">Pos / Position</a>: Retrieves or sets the position of the file pointer.</li>
-      <li><a href="#Length">Length</a>: Retrieves or sets the size of the file.</li>
-      <li><a href="#AtEOF">AtEOF</a>: Retrieves a non-zero number if the file pointer has reached the end of the file.</li>
-      <li><a href="#Encoding">Encoding</a>: Retrieves or sets the text encoding used by this file object.</li>
-      <li><a href="#Handle">Handle / __Handle</a>: Retrieves a system file handle, intended for use with DllCall().</li>
+      <li><a href="#Pos">Pos / Position</a>: Gets or sets the position of the file pointer.</li>
+      <li><a href="#Length">Length</a>: Gets or sets the size of the file.</li>
+      <li><a href="#AtEOF">AtEOF</a>: Gets a non-zero number if the file pointer has reached the end of the file.</li>
+      <li><a href="#Encoding">Encoding</a>: Gets or sets the text encoding used by this file object.</li>
+      <li><a href="#Handle">Handle / __Handle</a>: Gets a system file handle, intended for use with DllCall().</li>
     </ul>
   </li>
 </ul>
@@ -174,7 +174,7 @@
 
 <h2 id="Properties">Properties</h2>
 <a id="Position"></a><div class="methodShort" id="Pos"><h3>Pos / Position</h3>
-<p>Retrieves or sets the position of the file pointer.</p>
+<p>Gets or sets the position of the file pointer.</p>
 <pre class="Syntax">CurrentPos := File.<span class="func">Pos</span>
 CurrentPos := File.<span class="func">Position</span></pre>
 <pre class="Syntax">File.<span class="func">Pos</span> := NewPos
@@ -184,19 +184,19 @@ File.<span class="func">Position</span> := NewPos</pre>
 </div>
 
 <div class="methodShort" id="Length"><h3>Length</h3>
-<p>Retrieves or sets the size of the file.</p>
+<p>Gets or sets the size of the file.</p>
 <pre class="Syntax">CurrentSize := File.<span class="func">Length</span></pre>
 <pre class="Syntax">File.<span class="func">Length</span> := NewSize</pre>
 <p><em>CurrentSize</em> and <em>NewSize</em> are the size of the file, in bytes.</p>
 <p>This property should be used only with an actual file. If the File object was created from a handle to a pipe, it may return the amount of data currently available in the pipe's internal buffer, but this behaviour is not guaranteed.</p></div>
 
 <div class="methodShort" id="AtEOF"><h3>AtEOF</h3>
-  <p>Retrieves a non-zero number if the file pointer has reached the end of the file.</p>
+  <p>Gets a non-zero number if the file pointer has reached the end of the file.</p>
 <pre class="Syntax">IsAtEOF := File.<span class="func">AtEOF</span></pre>
   <p>This property should be used only with an actual file. If the File object was created from a handle to a non-seeking device such as a console buffer or pipe, the returned value may not be meaningful, as such devices do not logically have an "end of file".</p></div>
 
 <div class="methodShort" id="Encoding"><h3>Encoding</h3>
-<p>Retrieves or sets the text encoding used by this file object.</p>
+<p>Gets or sets the text encoding used by this file object.</p>
 <pre class="Syntax">CurrentEncoding := File.<span class="func">Encoding</span></pre>
 <pre class="Syntax">File.<span class="func">Encoding</span> := NewEncoding</pre>
   <p><em>CurrentEncoding</em> and <em>NewEncoding</em> are a numeric code page identifier (see <a href="https://learn.microsoft.com/windows/win32/intl/code-page-identifiers">Microsoft Docs</a>) or one of the following strings:</p>
@@ -210,7 +210,7 @@ File.<span class="func">Position</span> := NewPos</pre>
 </div>
 
 <a id="__Handle"></a><div class="methodShort" id="Handle"><h3>Handle / __Handle</h3>
-<p>Retrieves a system file handle, intended for use with <a href="DllCall.htm">DllCall()</a>. See <a href="https://learn.microsoft.com/windows/win32/api/fileapi/nf-fileapi-createfilea">CreateFile</a>.</p>
+<p>Gets a system file handle, intended for use with <a href="DllCall.htm">DllCall()</a>. See <a href="https://learn.microsoft.com/windows/win32/api/fileapi/nf-fileapi-createfilea">CreateFile</a>.</p>
 <pre class="Syntax">Handle := File.<span class="func">Handle</span>  <em>; Requires <span class="ver">[v1.1.35+]</span></em>
 Handle := File.<span class="func">__Handle</span></pre>
 <p>File objects internally buffer reads or writes. If data has been written into the object's internal buffer, it is committed to disk before the handle is returned. If the buffer contains data read from file, it is discarded and the actual file pointer is reset to the logical position indicated by the <a href="#Pos">Pos</a> property.</p></div>
