@@ -45,7 +45,7 @@
   <li><a href="#Show">Show</a>: Shows a control if it was previously hidden.</li>
   <li><a href="#Choose">Choose</a>: Selects an item in a multi-item control.</li>
   <li><a href="#ChooseString">ChooseString</a>: Selects an item in a multi-item control by string.</li>
-  <li><a href="#Font">Font</a>: Changes a control's font typeface, size, color, and style.</li>
+  <li><a href="#Font">Font</a>: Applies the window's current font settings to a control.</li>
   <li><a href="#options">Options</a>: Adds or removes various options and styles.</li>
 </ul>
 
@@ -147,7 +147,7 @@ GuiControl, Choose, ListBox1, 0  <em>; Deselect all items, requires <span class=
 <p>The pipe and double-pipe prefix are also supported (see the <a href="#Choose">Choose</a> sub-command for details).</p>
 
 <h3 id="Font">Font</h3>
-<p>Changes a control's font to the typeface, size, color, and style currently in effect for its window.</p>
+<p>Applies the window's <a href="Gui.htm#Font">current font settings</a> to a control.</p>
 <pre class="Syntax"><span class="func">GuiControl</span>, Font, ControlID</pre>
 <p>See <a href="#ExFont">example #6</a> for a demonstration.</p>
 
@@ -179,7 +179,7 @@ GuiControl, MyGui:, MyListBox, Item1|Item2</pre>
 <p id="Delete">There is no Delete sub-command. As a workaround, use the sub-commands <a href="#Hide">Hide</a> and/or <a href="#Disable">Disable</a>, or destroy and recreate the entire window via <a href="Gui.htm#Destroy">Gui Destroy</a>.</p>
 
 <h2 id="Related">Related</h2>
-<p><a href="Gui.htm">Gui</a>, <a href="GuiControlGet.htm">GuiControlGet</a>, <a href="Control.htm">Control</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlSetText.htm">ControlSetText</a></p>
+<p><a href="Gui.htm">Gui</a>, <a href="GuiControlGet.htm">GuiControlGet</a>, <a href="GuiControls.htm">GUI control types</a>, <a href="Control.htm">Control</a>, <a href="ControlFocus.htm">ControlFocus</a>, <a href="ControlMove.htm">ControlMove</a>, <a href="ControlSetText.htm">ControlSetText</a></p>
 
 <h2 id="Examples">Examples</h2>
 

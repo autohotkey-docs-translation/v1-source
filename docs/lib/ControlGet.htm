@@ -62,7 +62,7 @@
 <h3 id="List">List</h3>
 <p>Retrieves a list of entries/rows from a list box, combo box, drop-down list, or list-view control.</p>
 <pre class="Syntax"><span class="func">ControlGet</span>, OutputVar, List <span class="optional">, Options, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
-<p>The output, error handling and <em>Options</em> parameter usage depends on the target control. Specifically:</p>
+<p>The output, error handling, and <em>Options</em> parameter usage depend on the target control. Specifically:</p>
 
 <h4 id="ListBox_ComboBox_DropDownList">List Box, Combo Box, and Drop-Down List</h4>
 <p>The value of the <em>Options</em> parameter is ignored. In other words, regardless of the specified value, all the text in the control is retrieved.</p>
@@ -76,14 +76,14 @@ Loop, Parse, Entries, `n
 <ul>
   <li><strong>Selected:</strong> Retrieves only the selected rows rather than all rows. If none, <em>OutputVar</em> is made blank.</li>
   <li><strong>Focused:</strong> Retrieves only the focused row. If none, <em>OutputVar</em> is made blank.</li>
-  <li id="ColN"><strong>Col<em>N</em>:</strong> Retrieves only the <em>N</em>th column (field) rather than all columns. Replace <em>N</em> with a number of your choice. For example, Col4 retrieves the fourth column.</li>
+  <li id="ColN"><strong>Col</strong><em>N</em>: Retrieves only the <em>N</em>th column (field) rather than all columns. Replace <em>N</em> with a number of your choice. For example, Col4 retrieves the fourth column.</li>
   <li><strong>Count:</strong> Retrieves a single number that is the total number of rows in the control.</li>
   <li><strong>Count&nbsp;Selected:</strong> Retrieves the number of selected rows.</li>
   <li><strong>Count&nbsp;Focused:</strong> Retrieves the row number (position) of the focused row (0 if none).</li>
   <li><strong>Count&nbsp;Col:</strong> Retrieves the number of columns in the control (or -1 if the count cannot be determined).</li>
 </ul>
 <p>Each row except the last will end with a linefeed character (`n). Within each row, each field (column) except the last will end with a tab character (`t).</p>
-<p class="note"><strong>Note:</strong> Some applications store their list-view text privately, which prevents their text from being retrieved. In these cases, <a href="../misc/ErrorLevel.htm">ErrorLevel</a> will usually be set to 0 (indicating success) but all the retrieved fields will be empty. Also note that list-view text retrieval is not restricted by <a href="_MaxMem.htm">#MaxMem</a>.</p>
+<p>Note that some applications store their list-view text privately, which prevents their text from being retrieved. In these cases, <a href="../misc/ErrorLevel.htm">ErrorLevel</a> will usually be set to 0 (indicating success) but all the retrieved fields will be empty. Also note that list-view text retrieval is not restricted by <a href="_MaxMem.htm">#MaxMem</a>.</p>
 <p>Upon success, <a href="../misc/ErrorLevel.htm">ErrorLevel</a> is set to 0. Upon failure, it is set to 1 and <em>OutputVar</em> is made blank. Failure occurs when: 1) the target window or control does not exist; 2) the target control is not of type SysListView32; 3) the process owning the list-view control could not be opened, perhaps due to a lack of user permissions or because it is locked; 4) the <a href="#ColN">Col<em>N</em> option</a> specifies a nonexistent column.</p>
 <p>To extract the individual rows and fields out of a list-view control, use a <a href="LoopParse.htm">parsing loop</a> as in this example:</p>
 <pre>ControlGet, SelectedRows, List, Selected, SysListView321, <i>WinTitle</i>
@@ -197,12 +197,12 @@ ChoiceIndex := (ErrorLevel&lt;&lt;32&gt;&gt;32) + 1</pre>
 <h2 id="Examples">Examples</h2>
 
 <div class="ex" id="ExLine">
-<p><a class="ex_number" href="#ExLine"></a> Retrieves the text of the first line of the first edit control in a GUI or non-GUI window.</p>
-<pre>ControlGet, OutputVar, Line, 1, Edit1, Some Window Title</pre>
+<p><a class="ex_number" href="#ExLine"></a> Retrieves the text of the second line in the first edit control of a GUI or non-GUI window.</p>
+<pre>ControlGet, OutputVar, Line, 2, Edit1, Some Window Title</pre>
 </div>
 
 <div class="ex" id="ExTab">
-<p><a class="ex_number" href="#ExTab"></a> Reports the index of the active page of the first tab control in a GUI or non-GUI window.</p>
+<p><a class="ex_number" href="#ExTab"></a> Reports the index of the active page in the first tab control of a GUI or non-GUI window.</p>
 <pre>ControlGet, WhichTab, Tab,, SysTabControl321, Some Window Title
 if ErrorLevel
     MsgBox There was a problem.

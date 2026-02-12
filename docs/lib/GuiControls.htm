@@ -99,7 +99,6 @@
   <dd>
     <p>The display name of the button, which may include linefeeds (`n) to start new lines.</p>
     <p>An ampersand (&amp;) may be used to underline one of the letters, such as the letter P in <code class="no-highlight">&amp;Pause</code>. This allows the user to press <kbd>Alt</kbd>+<kbd>P</kbd> as a <a href="Gui.htm#ShortcutKey">shortcut key</a>. To display a literal ampersand, specify two consecutive ampersands (&amp;&amp;).</p>
-
   </dd>
 </dl>
 
@@ -155,8 +154,8 @@
 <dl>
   <dt>Options</dt>
   <dd>
-    <p id="ChooseCB">In addition to the <a href="Gui.htm#ControlOptions">general options and styles</a>, the following are supported or noteworthy:</p>
-    <p><strong>Choose</strong><em>N</em>: Specify for <em>N</em> the number of an item to be pre-selected. For example, <code class="no-highlight">Choose5</code> would pre-select the fifth item (as with other options, it can also be a variable such as <code class="no-highlight">Choose%Var%</code>). To change the choice or add/remove entries from the list after the control has been created, use <a href="GuiControl.htm">GuiControl</a>.</p>
+    <p>In addition to the <a href="Gui.htm#ControlOptions">general options and styles</a>, the following are supported or noteworthy:</p>
+    <p id="ChooseCB"><strong>Choose</strong><em>N</em>: Specify for <em>N</em> the number of an item to be pre-selected. For example, <code class="no-highlight">Choose5</code> would pre-select the fifth item (as with other options, it can also be a variable such as <code class="no-highlight">Choose%Var%</code>). To change the choice or add/remove entries from the list after the control has been created, use <a href="GuiControl.htm">GuiControl</a>.</p>
     <p><strong>Uppercase</strong> or <strong>Lowercase</strong>: Converts all items in the list to uppercase or lowercase.</p>
     <p><strong>Sort:</strong> Sorts the contents of the list alphabetically, which also affects any items added later via <a href="GuiControl.htm">GuiControl</a>. The Sort option also enables incremental searching whenever the list is dropped down; this allows an item to be selected by typing the first few characters of its name.</p>
     <p><strong>Limit:</strong> Restricts the user's input to the visible width of the ComboBox's edit field.</p>
@@ -260,7 +259,7 @@ Gui, Show, h70, Test</pre>
 <pre>Gui +LastFound
 <a href="PostMessage.htm">SendMessage</a>, 0x1006, 4, 0xFFAA99, SysDateTimePick321 <em>; 0x1006 is DTM_SETMCCOLOR. 4 is MCSC_MONTHBK (background color). The color must be specified in BGR vs. RGB format (red and blue components swapped).</em></pre>
 
-<h2 id="DropDownList">DropDownList</h2>
+<a id="DDL"></a><h2 id="DropDownList">DropDownList</h2>
 <p>A list of choices that is displayed in response to pressing a small button.</p>
 <p>Syntax:</p>
 <pre class="Syntax Indent"><span class="func">Gui</span>, Add, DropDownList, Options, Choices</pre>
@@ -373,7 +372,6 @@ GuiControl,, MyEdit, %FileContents%</pre>
   <dd>
     <p>The title of the box, which if present is displayed at its upper-left edge.</p>
     <p>An ampersand (&amp;) may be used to underline one of the letters, such as the letter C in <code class="no-highlight">&amp;Criteria</code>. This allows the user to press the <a href="Gui.htm#ShortcutKey">shortcut key</a> <kbd>Alt</kbd>+<kbd>C</kbd> to set keyboard focus to the first input-capable control that was added after the GroupBox control. To display a literal ampersand, specify two consecutive ampersands (&amp;&amp;).</p>
-
   </dd>
 </dl>
 
@@ -528,7 +526,7 @@ Gui, Add, Link,, Links may be used anywhere in the text like &lt;a id="A"&gt;thi
 <pre>Gui +LastFound
 <a href="PostMessage.htm">SendMessage</a>, 0x100A, 5, 0xFFAA99, SysMonthCal321 <em>; 0x100A is MCM_SETCOLOR. 5 is MCSC_TITLETEXT (color of title text). The color must be specified in BGR vs. RGB format (red and blue components swapped).</em></pre>
 
-<h2 id="Picture">Picture</h2>
+<a id="Pic"></a><h2 id="Picture">Picture</h2>
 <p>An area containing an image.</p>
 <p>Syntax:</p>
 <pre class="Syntax Indent"><span class="func">Gui</span>, Add, Picture, Options, ImageFile</pre>
@@ -659,7 +657,7 @@ Gui, Show</pre>
     <p id="Slider_ToolTip"><strong>ToolTip:</strong> Creates a <a href="ToolTip.htm">tooltip</a> that reports the numeric position of the slider as the user is dragging it. To have the tooltip appear in a non-default position, specify one of the following instead: <code class="no-highlight">ToolTipLeft</code> or <code class="no-highlight">ToolTipRight</code> (for <a href="#Slider_Vertical">vertical</a> sliders); <code class="no-highlight">ToolTipTop</code> or <code class="no-highlight">ToolTipBottom</code> (for horizontal sliders).</p>
     <p id="Slider_Vertical"><strong>Vertical:</strong> Makes the control slide up and down rather than left and right.</p>
     <p id="Slider_V"><strong>V</strong><em>Name</em>: The <a href="Gui.htm#var">associated variable</a> receives the current numeric position of the slider.</p>
-    <p><strong>G</strong><em>Label</em>: The <a href="Gui.htm#label">g-label</a> launches automatically whenever the user has stopped moving the slider (such as by releasing the mouse button after having dragging it). Each launch updates the control's <a href="#Slider_V">associated variable</a> (if any). If the control has the <a href="Gui.htm#AltSubmit">AltSubmit</a> option, the g-label is launched more often; it may consult the built-in variable <a href="../Variables.htm#GuiEvent">A_GuiEvent</a> which will contain the word Normal for stopping the slider movement, the number 0 for using <kbd>&larr;</kbd> or <kbd>&uarr;</kbd>, the number 1 for using <kbd>&rarr;</kbd> or <kbd>&darr;</kbd>, the number 2 for using <kbd>PgUp</kbd>, the number 3 for using <kbd>PgDn</kbd>, the number 4 for moving the slider via the mouse wheel or finishing a drag-and-drop to a new position, the number 5 for dragging the slider via the mouse (i.e. the mouse button is currently down), the number 6 for using <kbd>Home</kbd> to send the slider to the left or top side, or the number 7 for using <kbd>End</kbd> to send the slider to the right or bottom side. For example, if the user drags the slider one tick to the right, the g-label would be launched three times: 5, 4, and Normal.</p>
+    <p><strong>G</strong><em>Label</em>: The <a href="Gui.htm#label">g-label</a> launches automatically whenever the user has stopped moving the slider (such as by releasing the mouse button after having dragged it). Each launch updates the control's <a href="#Slider_V">associated variable</a> (if any). If the control has the <a href="Gui.htm#AltSubmit">AltSubmit</a> option, the g-label is launched more often; it may consult the built-in variable <a href="../Variables.htm#GuiEvent">A_GuiEvent</a> which will contain the word Normal for stopping the slider movement, the number 0 for using <kbd>&larr;</kbd> or <kbd>&uarr;</kbd>, the number 1 for using <kbd>&rarr;</kbd> or <kbd>&darr;</kbd>, the number 2 for using <kbd>PgUp</kbd>, the number 3 for using <kbd>PgDn</kbd>, the number 4 for moving the slider via the mouse wheel or finishing a drag-and-drop to a new position, the number 5 for dragging the slider via the mouse (i.e. the mouse button is currently down), the number 6 for using <kbd>Home</kbd> to send the slider to the left or top side, or the number 7 for using <kbd>End</kbd> to send the slider to the right or bottom side. For example, if the user drags the slider one tick to the right, the g-label would be launched three times: 5, 4, and Normal.</p>
     <p><strong>W</strong><em>n</em>: Sets the width of the control. For example, specifying <code class="no-highlight">w400</code> would make the control 400 pixels wide. If omitted, horizontal sliders default to 15 times the current font size, while <a href="#Slider_Vertical">vertical</a> sliders default to 30 pixels (except if a <a href="#Slider_Thick">thickness</a> has been specified).</p>
     <p><strong>R</strong><em>n</em> or <strong>H</strong><em>n</em>: Sets the height of the control. For example, specifying <code class="no-highlight">r7</code> would make the control 7 rows tall, while <code class="no-highlight">h400</code> would set its height to 400 pixels. If both R and H are omitted, horizontal sliders default to 30 pixels (except if a <a href="#Slider_Thick">thickness</a> has been specified), while <a href="#Slider_Vertical">vertical</a> sliders default to 5 rows.</p>
     <p><strong>(Uncommon numeric styles):</strong> See the <a href="../misc/Styles.htm#Slider">Slider styles table</a> for a list.</p>
@@ -725,7 +723,7 @@ SB_SetText("There are " . RowCount . " rows selected.")</pre>
 <h4 id="SB_SetIcon">SB_SetIcon</h4>
 <p>Displays a small icon to the left of the text in the specified part.</p>
 <pre class="Syntax"><span class="func">SB_SetIcon</span>(FileName <span class="optional">, IconNumber, PartNumber</span>)</pre>
-<p><em>FileName:</em> The name of an icon or multi-icon file such as <code>"Shell32.dll"</code>, or in <span class="ver">[v1.1.23+]</span> an <a href="../misc/ImageHandles.htm">icon handle</a> such as <code>"HICON:" handle</code>, or in <span class="ver">[v1.1.27+]</span> a non-icon image file or <a href="../misc/ImageHandles.htm">bitmap handle</a> such as <code>"HBITMAP:" handle</code>. For a list of supported formats, see the <a href="#Picture_ImageFile">Picture's ImageFile parameter</a>. The file is assumed to be in <a href="../Variables.htm#WorkingDir">A_WorkingDir</a> if an absolute path isn't specified.</p>
+<p><em>FileName:</em> The name of an icon or multi-icon file such as <code>"Shell32.dll"</code>, or in <span class="ver">[v1.1.23+]</span> an <a href="../misc/ImageHandles.htm">icon handle</a> such as <code>"HICON:" handle</code>, or in <span class="ver">[v1.1.27+]</span> a non-icon image file or <a href="../misc/ImageHandles.htm">bitmap handle</a> such as <code>"HBITMAP:" handle</code>. For a list of supported formats, see <a href="#Picture_ImageFile">Picture</a>. The file is assumed to be in <a href="../Variables.htm#WorkingDir">A_WorkingDir</a> if an absolute path isn't specified.</p>
 <p><em>IconNumber:</em> If omitted, it defaults to 1 (the first icon group). Otherwise, specify the number of the icon group to be used in the file. For example, <code>2</code> would use the default icon from the second icon group. If negative, its absolute value is assumed to be the resource ID of an icon within an executable file.</p>
 <p><em>PartNumber:</em> If omitted, it defaults to 1. Otherwise, specify an integer between 1 and 256.</p>
 <p>This function returns the icon's handle (HICON) upon success, and 0 upon failure. The HICON is a system resource that can be safely ignored by most scripts because it is destroyed automatically when the status bar's window is destroyed. Similarly, any old icon is destroyed when this function replaces it with a new one. This can be avoided via:</p>
@@ -902,7 +900,7 @@ Gui, Add, UpDown, vMyUpDown Range1-10, 5</pre>
 <p>To change an UpDown's increment to a value other than 1 (such as 5 or 0.1), see <a href="../scripts/index.htm#Custom_Increments_for_UpDown_Controls">this script</a>.</p>
 <p>The number format displayed inside the buddy control may be changed from decimal to hexadecimal by following this example:</p>
 <pre>Gui +LastFound
-SendMessage, 0x046D, 16, 0, msctls_updown321 <em>; 0x046D is UDM_SETBASE</em></pre>
+SendMessage, 0x046D, 16, 0, msctls_updown321 <em>; 0x046D is UDM_SETBASE.</em></pre>
 <p>However, this affects only the buddy control, not the UpDown's reported position.</p>
 
 <h2 id="Related">Related</h2>

@@ -71,11 +71,13 @@
 <pre>GuiControlGet, MyEdit, Pos
 MsgBox The X coordinate is %MyEditX%. The Y coordinate is %MyEditY%. The width is %MyEditW%. The height is %MyEditH%.</pre>
 <p>Within a <a href="../Functions.htm">function</a>, to create a set of variables that is global instead of local, <a href="../Functions.htm#Global">declare</a> <em>OutputVar</em> as a global variable prior to using this command (the converse is true for <a href="../Functions.htm#AssumeGlobal">assume-global</a> functions). However, it is often also necessary to declare each variable in the set, due to a <a href="../Functions.htm#ArrayConfusion">common source of confusion</a>.</p>
+<p>See <a href="#ExPos">example #4</a> for a demonstration.</p>
 
 <h3 id="Focus">Focus</h3>
 <p>Retrieves the ClassNN (class name and sequence number) of the control with keyboard focus.</p>
 <pre class="Syntax"><span class="func">GuiControlGet</span>, OutputVar, Focus</pre>
 <p>Since a GUI window must be <a href="WinActivate.htm">active</a> for one of its controls to have focus, <em>OutputVar</em> will be made blank if it is not active.</p>
+<p>See <a href="#ExFocus">example #5</a> for a demonstration.</p>
 
 <h3 id="FocusV">FocusV <span class="ver">[v1.0.43.06+]</span></h3>
 <p>Retrieves the <a href="Gui.htm#Events">associated variable name</a> of the control with keyboard focus.</p>
