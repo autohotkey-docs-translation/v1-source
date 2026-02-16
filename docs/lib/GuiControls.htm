@@ -582,6 +582,7 @@ Gui, Show</pre>
     <p><strong>Range</strong><em>MinMax</em>: Sets the range to be something other than 0 to 100. Specify for <em>MinMax</em> the minimum, a dash, and maximum. For example, <code class="no-highlight">Range0-1000</code> would allow numbers between 0 and 1000; <code class="no-highlight">Range-50-50</code> would allow numbers between -50 and 50; and <code class="no-highlight">Range-10--5</code> would allow numbers between -10 and -5.</p>
     <p><strong>Smooth:</strong> Specify <code class="no-highlight">-Smooth</code> (minus Smooth) to display a length of segments rather than a smooth continuous bar. Specifying <code class="no-highlight">-Smooth</code> is also one of the requirements to show a themed progress bar on Windows XP or later. The other requirement is that the bar not have any custom colors; that is, that the C and Background options be omitted.</p>
     <p id="Progress_Vertical"><strong>Vertical:</strong> Makes the bar rise or fall vertically rather than move along horizontally.</p>
+    <p id="Progress_V"><strong>V</strong><em>Name</em>: The <a href="Gui.htm#var">associated variable</a> receives the current numeric position of the bar.</p>
     <p><strong>W</strong><em>n</em>: Sets the width of the control. For example, specifying <code class="no-highlight">w400</code> would make the control 400 pixels wide. If omitted, horizontal bars default to 15 times the current font size, while <a href="#Progress_Vertical">vertical</a> bars default to 2 times the current font size.</p>
     <p><strong>R</strong><em>n</em> or <strong>H</strong><em>n</em>: Sets the height of the control. For example, specifying <code class="no-highlight">r7</code> would make the control 7 rows tall, while <code class="no-highlight">h400</code> would set its height to 400 pixels. If both R and H are omitted, horizontal bars default to 2 times the current font size, while <a href="#Progress_Vertical">vertical</a> bars default to 5 rows.</p>
     <p><strong>(Uncommon numeric styles):</strong> See the <a href="../misc/Styles.htm#Progress">Progress styles table</a> for a list.</p>
@@ -593,7 +594,7 @@ Gui, Show</pre>
 </dl>
 
 <h3 id="Progress_Remarks">Progress Remarks</h3>
-<p>To later change the position of the bar, follow these examples, all of which operate upon a progress bar whose <a href="Gui.htm#var">associated variable name</a> is MyProgress:</p>
+<p>To later change the position of the bar, follow these examples, all of which operate upon a progress bar whose <a href="#Progress_V">associated variable name</a> is MyProgress:</p>
 <pre><a href="GuiControl.htm">GuiControl</a>,, MyProgress, +20  <em>; Increase the current position by 20.</em>
 <a href="GuiControl.htm">GuiControl</a>,, MyProgress, 50  <em>; Set the current position to 50.</em></pre>
 <p>For horizontal progress bars, the thickness of the bar is equal to the control's height. For <a href="#Progress_Vertical">vertical</a> progress bars it is equal to the control's width.</p>
