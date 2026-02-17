@@ -113,7 +113,7 @@
 <a id="Checkbox"></a><h2 id="CheckBox">CheckBox</h2>
 <p>A small box that can be checked or unchecked to represent On/Off, Yes/No, and so on.</p>
 <p>Syntax:</p>
-<pre class="Syntax Indent"><span class="func">Gui</span>, Add, CheckBox, Options, Label</pre>
+<pre class="Syntax Indent"><span class="func">Gui</span>, Add, CheckBox, Options, Caption</pre>
 <p>Example:</p>
 <pre>Gui, Add, CheckBox, vShipToBillingAddress, Ship to billing address?</pre>
 <p>Appearance:</p>
@@ -130,7 +130,7 @@
     <p><strong>G</strong><em>Label</em>: The <a href="Gui.htm#label">g-label</a> launches automatically whenever the user clicks or changes the checkbox.</p>
     <p><strong>(Uncommon numeric styles):</strong> See the <a href="../misc/Styles.htm#Button">CheckBox styles table</a> for a list.</p>
   </dd>
-  <dt>Label</dt>
+  <dt>Caption</dt>
   <dd>
     <p>The label to display to the right of the box. This label is typically used as a prompt or description, and it may include linefeeds (`n) to start new lines.</p>
     <p>An ampersand (&amp;) may be used to underline one of the letters, such as the letter P in <code class="no-highlight">&amp;Pause</code>. This allows the user to press <kbd>Alt</kbd>+<kbd>P</kbd> as a <a href="Gui.htm#ShortcutKey">shortcut key</a>. To display a literal ampersand, specify two consecutive ampersands (&amp;&amp;).</p>
@@ -602,7 +602,7 @@ Gui, Show</pre>
 <h2 id="Radio">Radio</h2>
 <p>A radio button is a small empty circle that can be checked (on) or unchecked (off).</p>
 <p>Syntax:</p>
-<pre class="Syntax Indent"><span class="func">Gui</span>, Add, Radio, Options, Label</pre>
+<pre class="Syntax Indent"><span class="func">Gui</span>, Add, Radio, Options, Caption</pre>
 <p>Example:</p>
 <pre>Gui, Add, Radio, vMyRadioGroup, Wait for all items to be in stock before shipping.</pre>
 <p>Appearance:</p>
@@ -619,7 +619,7 @@ Gui, Show</pre>
     <p><strong>G</strong><em>Label</em>: The <a href="Gui.htm#label">g-label</a> launches automatically whenever the user turns on the button. Specify the g-label for each button in a <a href="#Radio_Group_Details">radio group</a> for which the label should be launched. This allows the flexibility to ignore the clicks of certain buttons. A double-click can be detected by checking whether <a href="../Variables.htm#GuiEvent">A_GuiEvent</a> contains the word DoubleClick.</p>
     <p><strong>(Uncommon numeric styles):</strong> See the <a href="../misc/Styles.htm#Button">Radio styles table</a> for a list.</p>
   </dd>
-  <dt>Label</dt>
+  <dt>Caption</dt>
   <dd>
     <p>The label to display to the right of the radio button. This label is typically used as a prompt or description, and it may include linefeeds (`n) to start new lines.</p>
     <p>An ampersand (&amp;) may be used to underline one of the letters, such as the letter P in <code class="no-highlight">&amp;Pause</code>. This allows the user to press <kbd>Alt</kbd>+<kbd>P</kbd> as a <a href="Gui.htm#ShortcutKey">shortcut key</a>. To display a literal ampersand, specify two consecutive ampersands (&amp;&amp;).</p>
