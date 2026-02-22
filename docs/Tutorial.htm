@@ -680,15 +680,15 @@ if Var1 &lt; %Var2%  <em>; Without parentheses, the IF is legacy. However, only 
 <h3 id="s81">a. The mysterious square brackets</h3>
 <p>Throughout the documentation, you will see these two symbols (<code>[</code> and <code>]</code>) surrounding code in the yellow syntax box at the top of almost all pages. Anything inside of these brackets are <u>optional</u>. Meaning the stuff inside can be left out if you don't need them. When writing your code, it is very important to <u>not</u> type the square brackets in your code.</p>
 <p>On the <a href="lib/ControlGetText.htm">ControlGetText</a> page you will see this:</p>
-<pre class="Syntax"><span class="func">ControlGetText</span>, OutputVar <span class="optional">, Control, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
+<pre class="Syntax"><span class="func">ControlGetText</span>, OutputVar <span class="optional">, ControlID, WinTitle, WinText, ExcludeTitle, ExcludeText</span></pre>
 <p>So you could simply do this if you wanted:</p>
 <pre class="no-highlight">ControlGetText, OutputVar</pre>
 <p>Or add in some more details:</p>
-<pre class="no-highlight">ControlGetText, OutputVar, Control, WinTitle</pre>
+<pre class="no-highlight">ControlGetText, OutputVar, ControlID, WinTitle</pre>
 <p>What if you wanted to use <em>ExcludeTitle</em> but not fill in <em>WinText</em> or <em>WinTitle</em>? Simple!</p>
-<pre class="no-highlight">ControlGetText, OutputVar, Control,,, ExcludeTitle</pre>
+<pre class="no-highlight">ControlGetText, OutputVar, ControlID,,, ExcludeTitle</pre>
 <p>Please note that you cannot IGNORE parameters, but you can leave them blank. If you were to ignore <code class="no-highlight">WinTitle, WinText</code>, it would look like this and cause issues:</p>
-<pre class="no-highlight">ControlGetText, OutputVar, Control, ExcludeTitle</pre>
+<pre class="no-highlight">ControlGetText, OutputVar, ControlID, ExcludeTitle</pre>
 
 <h3 id="s82">b. Finding your AHK version</h3>
 <p>Run this code to see your AHK version:</p>
