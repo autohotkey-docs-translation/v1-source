@@ -176,8 +176,8 @@
 <p id="ComboBoxHeight">To set the height of the selection field or list items, use the <a href="https://learn.microsoft.com/windows/win32/controls/cb-setitemheight">CB_SETITEMHEIGHT</a> message as in the example below:</p>
 <pre>Gui, Add, ComboBox, vcbx w200 hwndhcbx, One||Two
 <em>; CB_SETITEMHEIGHT = 0x0153</em>
-PostMessage, 0x0153, -1, 50,, ahk_id %hcbx%  <em>; Set height of selection field.</em>
-PostMessage, 0x0153,  0, 50,, ahk_id %hcbx%  <em>; Set height of list items.</em>
+SendMessage, 0x0153, -1, 50,, ahk_id %hcbx%  <em>; Set height of selection field.</em>
+SendMessage, 0x0153,  0, 50,, ahk_id %hcbx%  <em>; Set height of list items.</em>
 Gui, Show, h70, Test</pre>
 <p>The separator between fields may be changed to something other than pipe by using the GUI option <a href="Gui.htm#Delimiter">+Delimiter</a>. For example, <code>Gui +Delimiter`n</code> would change it to linefeed (`n), and <code>Gui +DelimiterTab</code> would change it to tab (`t).</p>
 <p>On a related note, if you want to automate the process of showing and hiding the popup list later on, use <a href="Control.htm#ShowDropDown">Control ShowDropDown</a> and <a href="Control.htm#HideDropDown">Control HideDropDown</a>.</p>
@@ -296,8 +296,8 @@ Gui, Show, h70, Test</pre>
 <p>To set the height of the selection field or list items, use the <a href="https://learn.microsoft.com/windows/win32/controls/cb-setitemheight">CB_SETITEMHEIGHT</a> message as in the example below:</p>
 <pre>Gui, Add, DDL, vcbx w200 hwndhcbx, One||Two
 <em>; CB_SETITEMHEIGHT = 0x0153</em>
-PostMessage, 0x0153, -1, 50,, ahk_id %hcbx%  <em>; Set height of selection field.</em>
-PostMessage, 0x0153,  0, 50,, ahk_id %hcbx%  <em>; Set height of list items.</em>
+SendMessage, 0x0153, -1, 50,, ahk_id %hcbx%  <em>; Set height of selection field.</em>
+SendMessage, 0x0153,  0, 50,, ahk_id %hcbx%  <em>; Set height of list items.</em>
 Gui, Show, h70, Test</pre>
 <p>The separator between fields may be changed to something other than pipe by using the GUI option <a href="Gui.htm#Delimiter">+Delimiter</a>. For example, <code>Gui +Delimiter`n</code> would change it to linefeed (`n), and <code>Gui +DelimiterTab</code> would change it to tab (`t).</p>
 <p>On a related note, if you want to automate the process of showing and hiding the popup list later on, use <a href="Control.htm#ShowDropDown">Control ShowDropDown</a> and <a href="Control.htm#HideDropDown">Control HideDropDown</a>.</p>
