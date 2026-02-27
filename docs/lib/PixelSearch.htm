@@ -30,7 +30,7 @@
   <dd><p>The X and Y coordinates of the ending corner of the rectangle to search, which can be <a href="../Variables.htm#Expressions">expressions</a>. Coordinates are relative to the active window unless <a href="CoordMode.htm">CoordMode</a> was used to change that.</p></dd>
 
   <dt>ColorID</dt>
-  <dd><p>The decimal or hexadecimal color ID to search for, by default in Blue-Green-Red (BGR) format, which can be an <a href="../Variables.htm#Expressions">expression</a>. Color IDs can be determined using Window Spy (accessible from the tray menu) or via <a href="PixelGetColor.htm">PixelGetColor</a>. For example: <code>0x9d6346</code>.</p></dd>
+  <dd><p>The decimal or hexadecimal color ID to search for, by default in Blue-Green-Red (BGR) format, which can be an <a href="../Variables.htm#Expressions">expression</a>. Color IDs can be determined using <a href="../Program.htm#Window_Spy">Window Spy</a> or via <a href="PixelGetColor.htm">PixelGetColor</a>. For example: <code>0x9d6346</code>.</p></dd>
 
   <dt>Variation</dt>
   <dd><p>If blank or omitted, it defaults to 0. Otherwise, specify a number between 0 and 255 (inclusive) to indicate the allowed number of shades of variation in either direction for the intensity of the red, green, and blue components of the color (can be an <a href="../Variables.htm#Expressions">expression</a>). For example, if 2 is specified and <em>ColorID</em> is 0x444444, any color from 0x424242 to 0x464646 will be considered a match. This parameter is helpful if the color sought is not always exactly the same shade. If you specify 255 shades of variation, all colors will match.</p></dd>
